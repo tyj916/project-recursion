@@ -7,7 +7,7 @@ function merge(leftArray, rightArray) {
   let rightCount = 0;
 
   for (let i = 0; i < totalLength; i++ ) {
-    if (leftArray[leftCount] < rightArray[rightCount]) {
+    if (leftArray[leftCount] < rightArray[rightCount] || !rightArray[rightCount]) {
       mergeArray.push(leftArray[leftCount]);
       leftCount++;
     } else {
