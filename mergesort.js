@@ -2,18 +2,25 @@
 
 function merge(leftArray, rightArray) {
   const mergeArray = [];
-  const totalLength = leftArray.length + rightArray.length;
   let leftCount = 0;
   let rightCount = 0;
 
-  for (let i = 0; i < totalLength; i++ ) {
-    if (leftArray[leftCount] < rightArray[rightCount] || !rightArray[rightCount]) {
+  while (leftCount < leftArray.length && rightCount < rightArray.length) {
+    if (leftArray[leftCount] < rightArray[rightCount]) {
       mergeArray.push(leftArray[leftCount]);
       leftCount++;
     } else {
       mergeArray.push(rightArray[rightCount]);
       rightCount++;
     }
+  }
+
+  for (; leftCount < leftArray.length; leftCount++) {
+    mergeArray.push(leftArray[leftCount]);
+  }
+
+  for (; rightCount < rightArray.length; rightCount++) {
+    mergeArray.push(rightArray[rightCount]);
   }
 
   return mergeArray;
