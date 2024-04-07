@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+export { mergeSort };
+
 function merge(leftArray, rightArray) {
   const mergeArray = [];
   let leftCount = 0;
@@ -40,5 +42,3 @@ function mergeSort(array) {
     return array;
   }
 }
-
-console.log(mergeSort([3, 2, 1, 13, 8, 5, 0, 1]));
